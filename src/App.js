@@ -1,46 +1,27 @@
-import { GoBellFill, GoDesktopDownload, GoImage } from "react-icons/go";
-import Button from "./components/Button";
+import Accordion from "./components/Accordion";
 
 function App() {
-  const handleClick = () => {
-    console.log("Clicked!!!");
-  };
-  return (
-    <div>
-      <div>
-        <Button
-          secondary
-          outline
-          rounded
-          className="mb-5"
-          onClick={handleClick}
-        >
-          <GoBellFill />
-          Click me!!!
-        </Button>
-      </div>
-      <div>
-        <Button warning>Buy Now!</Button>
-      </div>
-      <div>
-        <Button success outline>
-          Seal Deal!
-        </Button>
-      </div>
-      <div>
-        <Button success rounded outline>
-          <GoDesktopDownload />
-          Hide Ads!
-        </Button>
-      </div>
-      <div>
-        <Button primary rounded>
-          <GoImage />
-          Something!
-        </Button>
-      </div>
-    </div>
-  );
+  const items = [
+    {
+      id: "ret345435",
+      label: "Can I use React on a project?",
+      content:
+        "You can use React on any project you want.You can use React on any project you want.You can use React on any project you want.You can use React on any project you want.You can use React on any project you want.",
+    },
+    {
+      id: "56sdfsfsf",
+      label: "Can I use Javascript on a project?",
+      content:
+        "You can use React on any project you want.You can use React on any project you want.You can use React on any project you want.You can use React on any project you want.You can use React on any project you want.",
+    },
+    {
+      id: "sdfgsd2345",
+      label: "Can I use CSS on a project?",
+      content:
+        "You can use React on any project you want.You can use React on any project you want.You can use React on any project you want.You can use React on any project you want.You can use React on any project you want.",
+    },
+  ];
+  return <Accordion items={items} />;
 }
 
 export default App;
