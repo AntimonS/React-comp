@@ -8,7 +8,12 @@ function Dropdown({ options, value, onChange }) {
 
   useEffect(() => {
     const handler = (event) => {
-      console.log(divEl);
+      if (!divEl.current) {
+        return;
+      }
+      if (!divEl.current.contains(event.target)) {
+        setIsOpen(false);
+      }
     };
     document.addEventListener("click", handler, true);
     return () => {
@@ -22,9 +27,7 @@ function Dropdown({ options, value, onChange }) {
 
   window.timeTwo = performance.now();
   const handleOptionClick = (option) => {
-    window.timeOne = performance.now();
     setIsOpen(false);
-    console.log(option);
     onChange(option);
   };
 
