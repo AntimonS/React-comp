@@ -25,7 +25,7 @@ function Dropdown({ options, value, onChange }) {
     setIsOpen(!isOpen);
   };
 
-  window.timeTwo = performance.now();
+  // window.timeTwo = performance.now();
   const handleOptionClick = (option) => {
     setIsOpen(false);
     onChange(option);
